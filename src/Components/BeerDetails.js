@@ -13,7 +13,7 @@ function BeerDetails(props){
         <h4>{beer.quantity}</h4>
         <input type="number" name="restock" id="restock"/>
         <button onClick={()=>props.onRestocking(beer.id, parseInt($("#restock").val()))}>Restock</button>
-        <button>Buy Beer</button>
+        <button onClick={()=>props.onBuying(beer.id)}>Buy Beer</button>
         <button onClick={props.onClickingEdit}>Edit this Beer</button>
         <button onClick ={() => props.onClickingDelete(beer.id)}>Delete this beer</button>
     </React.Fragment>
