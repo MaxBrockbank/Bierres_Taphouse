@@ -7,7 +7,7 @@ function App() {
   return (
     <React.Fragment>
       <Container>
-        {/* <Header /> */}
+        <Header />
         <Control />
       </Container>
     </React.Fragment>

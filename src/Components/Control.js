@@ -65,7 +65,7 @@ class Control extends React.Component{
 
   handleEditingBeerInList = (beerToEdit) => {
     const editedMasterBeerList = this.state.masterBeerList
-      .filter(beer => beer.id !== this.state.selectedBeer.Id)
+      .filter(beer => beer.id !== this.state.selectedBeer.id)
       .concat(beerToEdit);
     this.setState({
       masterBeerList: editedMasterBeerList,
