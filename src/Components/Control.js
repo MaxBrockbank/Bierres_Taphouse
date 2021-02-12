@@ -38,11 +38,11 @@ class Control extends React.Component{
   }
 
   handleRestockBeer= (id, restockAmount) => {
-    const newMasterBeerList = this.state.masterBeerList.map(beer=> {
-      if(restockAmount !== NaN){
-        beer.quantity = beer.id === id ? beer.quantity + restockAmount : beer.quantity
-      }
-    })
+    console.log(restockAmount);
+    const newMasterBeerList = this.state.masterBeerList.map((beer)=> ({
+        ...beer,
+        quantity: beer.id === id ? beer.quantity + restockAmount : beer.quantity
+    }))
     this.setState({
       masterBeerList: newMasterBeerList,
       selectedBeer: null

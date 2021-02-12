@@ -7,7 +7,7 @@ function NewBeerForm(props){
 
   function handleNewBeerFormSubmission(event){
     event.preventDefault();
-    props.onNewBeerCreation({name: event.target.name.value, brand: event.target.brand.value, price: event.target.price.value, ABV: event.target.ABV.value, quantity: event.target.quantity.value, id: v4()})
+    props.onNewBeerCreation({name: event.target.name.value, brand: event.target.brand.value, price: parseFloat(event.target.price.value), ABV: parseFloat(event.target.ABV.value), quantity: parseInt(event.target.quantity.value), id: v4()})
   }
   return(
     <React.Fragment>
