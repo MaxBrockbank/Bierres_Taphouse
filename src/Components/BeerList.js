@@ -30,6 +30,7 @@ function BeerList(props){
               return(
                 <Col>
                   <Beer 
+                  whenBeerClicked = {props.onBeerSelection}
                   name={beer.name} 
                   brand={beer.brand} 
                   price={parseInt(beer.price)} 

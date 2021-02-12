@@ -16,12 +16,12 @@ class Control extends React.Component{
   }
 
   handleClick = () => {
-    if(this.state.selected != null){
+    if(this.state.selectedBeer != null){
       this.setState({
         formVisible: false,
         selectedBeer: null,
         editing: false
-      })
+      });
     } else {
       this.setState(prevState => ({
         formVisible: !prevState.formVisible
@@ -37,13 +37,21 @@ class Control extends React.Component{
     })
   }
 
-  handleAddToQuantity = (id) => {
-
+  handleRestockBeer= (id, restockAmount) => {
+    const newMasterBeerList = this.state.masterBeerList.map(beer=> {
+      if(restockAmount !== NaN){
+        beer.quantity = beer.id === id ? beer.quantity + restockAmount : beer.quantity
+      }
+    })
+    this.setState({
+      masterBeerList: newMasterBeerList,
+      selectedBeer: null
+    });
   }
 
-  handleSubFromQuantity = (id) => {
+  handleBuyBeer = (id) => {
 
-  }
+    }
 
 
   handleEditingBeerInList = (beerToEdit) => {
@@ -84,7 +92,7 @@ class Control extends React.Component{
       currentComponent = <EditBeerForm beer = {this.state.selectedBeer} onEditBeer={this.handleEditingBeerInList} />
       buttonText = "Return to beer list";
     } else if(this.state.selectedBeer !== null){
-      currentComponent = <BeerDetails beer={this.state.selectedBeer} onClickingDelete = {this.handleDeletingBeer} onClickingEdit = {this.handleEditClick} />
+      currentComponent = <BeerDetails beer={this.state.selectedBeer} onClickingDelete = {this.handleDeletingBeer} onClickingEdit = {this.handleEditClick} onRestocking = {this.handleRestockBeer} />
       buttonText = "Return to beer list"
     }else if(this.state.formVisible){
       currentComponent = <NewBeerForm onNewBeerCreation = {this.handleAddNewBeerToList}/>

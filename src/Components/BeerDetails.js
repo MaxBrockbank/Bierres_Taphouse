@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as $ from 'jquery';
 
 function BeerDetails(props){
+  const { beer } = props;
   return(
     <React.Fragment>
-        {/* <h3>{brand}</h3>
-        <h3>{name}</h3>
-        <h4>${price} Per Pint</h4>
-        <h4>ABV</h4>
-        <button>Buy Pint</button>
-        <button>Restock</button>
-        <button>Edit Beer</button> */}
+        <h3>{beer.brand}</h3>
+        <h3>{beer.name}</h3>
+        <h4>${beer.price} Per Pint</h4>
+        <h4>{beer.ABV}%</h4>
+        <h4>{beer.quantity}</h4>
+        <input type="number" name="restock" id="restock"/>
+        <button onClick={()=>props.onRestocking(beer.id, parseInt($("#restock").value))}>Restock</button>
+        <button>Buy Beer</button>
+        <button>Edit Beer</button>
     </React.Fragment>
   );
 }
