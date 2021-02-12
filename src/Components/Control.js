@@ -29,20 +29,50 @@ class Control extends React.Component{
     }
   }
 
-  // handleAddToQuantity = () => {
-
-  // }
-
-  // handleSubFromQuantity = () => {
-
-  // }
-
   handleAddNewBeerToList = (newBeer) => {
     const newMasterBeerList = this.state.masterBeerList.concat(newBeer);
     this.setState({
       masterBeerList: newMasterBeerList,
       formVisible: false
     })
+  }
+
+  handleAddToQuantity = (id) => {
+
+  }
+
+  handleSubFromQuantity = (id) => {
+
+  }
+
+
+  handleEditingBeerInList = (beerToEdit) => {
+    const editedMasterBeerList = this.state.masterBeerList
+      .filter(beer => beer.id !== this.state.selectedBeer.Id)
+      .concat(beerToEdit);
+    this.setState({
+      masterBeerList: editedMasterBeerList,
+      editing: false,
+      selectedBeer: null
+    })
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleDeletingBeer = (id) => {
+    const newMasterBeerList = this.state.masterBeerList.filter(beer => beer.id !== id);
+    this.setState({
+      masterBeerList: newMasterBeerList,
+      editing: false,
+      selectedBeer:null
+    })
+  }
+
+  handleChangingSelectedBeer = (id) => {
+    const selectedBeer = this.state.masterBeerList.filter(beer => beer.id === id)[0];
+    this.setState({selectedBeer: selectedBeer});
   }
 
   render(){
