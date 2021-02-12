@@ -38,10 +38,13 @@ class Control extends React.Component{
   }
 
   handleRestockBeer= (id, restockAmount) => {
-    const newMasterBeerList = this.state.masterBeerList.map(beer=> ({
+    let newMasterBeerList = this.state.masterBeerList;
+    if(restockAmount > 0){
+      newMasterBeerList = this.state.masterBeerList.map(beer=> ({
         ...beer,
         quantity: beer.id === id ? beer.quantity + restockAmount : beer.quantity
-    }))
+      }))
+    }
     this.setState({
       masterBeerList: newMasterBeerList,
       selectedBeer: null

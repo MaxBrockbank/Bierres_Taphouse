@@ -4,6 +4,28 @@ import * as $ from 'jquery';
 
 function BeerDetails(props){
   const { beer } = props;
+
+  function checkquanity (num) {
+    if(num > 0 && num < 124){
+      return(
+      <React.Fragment>
+        <input type="number" name="restock" id="restock"/>
+        <button onClick={()=>props.onRestocking(beer.id, parseInt($("#restock").val()))}>Restock</button>
+        <button onClick={()=>props.onBuying(beer.id)}>Buy Beer</button>
+      </React.Fragment>
+      )
+    } else if(num > 0){
+      return <button onClick={()=>props.onBuying(beer.id)}>Buy Beer</button>
+    } else if(num < 124){
+      return(
+      <React.Fragment>
+        <input type="number" name="restock" id="restock"/>
+        <button onClick={()=>props.onRestocking(beer.id, parseInt($("#restock").val()))}>Restock</button>
+      </React.Fragment>
+      );
+    }
+  }
+  const stockElements = checkquanity(beer.quantity);
   return(
     <React.Fragment>
         <h3>{beer.brand}</h3>
@@ -11,9 +33,7 @@ function BeerDetails(props){
         <h4>${beer.price} Per Pint</h4>
         <h4>{beer.ABV}%</h4>
         <h4>{beer.quantity}</h4>
-        <input type="number" name="restock" id="restock"/>
-        <button onClick={()=>props.onRestocking(beer.id, parseInt($("#restock").val()))}>Restock</button>
-        <button onClick={()=>props.onBuying(beer.id)}>Buy Beer</button>
+        {stockElements}
         <button onClick={props.onClickingEdit}>Edit this Beer</button>
         <button onClick ={() => props.onClickingDelete(beer.id)}>Delete this beer</button>
     </React.Fragment>
