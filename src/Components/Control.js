@@ -1,6 +1,8 @@
 import React from 'react';
+import BeerDetails from './BeerDetails';
 import BeerList from './BeerList';
-import NewBeerForm from './NewBeerForm'
+import NewBeerForm from './NewBeerForm';
+import EditBeerForm from './EditBeerForm';
 
 class Control extends React.Component{
   constructor(props){
@@ -27,12 +29,20 @@ class Control extends React.Component{
     }
   }
 
-  handleAddToQuantity = () => {
+  // handleAddToQuantity = () => {
 
-  }
+  // }
 
-  handleSubFromQuantity = () => {
+  // handleSubFromQuantity = () => {
 
+  // }
+
+  handleAddNewBeerToList = (newBeer) => {
+    const newMasterBeerList = this.state.masterBeerList.concat(newBeer);
+    this.setState({
+      masterBeerList: newMasterBeerList,
+      formVisible: false
+    })
   }
 
   render(){
@@ -40,11 +50,17 @@ class Control extends React.Component{
     let buttonText = null;
     let currentComponent = null;
 
-    if(this.state.formVisible !== false){
-      currentComponent = <NewBeerForm />
+    if(this.state.editing){
+      currentComponent = <EditBeerForm beer = {this.state.selectedBeer} onEditBeer={this.handleEditingBeerInList} />
+      buttonText = "Return to beer list";
+    } else if(this.state.selectedBeer !== null){
+      currentComponent = <BeerDetails beer={this.state.selectedBeer} onClickingDelete = {this.handleDeletingBeer} onClickingEdit = {this.handleEditClick} />
+      buttonText = "Return to beer list"
+    }else if(this.state.formVisible){
+      currentComponent = <NewBeerForm onNewBeerCreation = {this.handleAddNewBeerToList}/>
       buttonText = "Return to beer list"
     } else {
-      currentComponent = <BeerList />
+      currentComponent = <BeerList beerList={this.state.masterBeerList} onBeerSelection={this.handleChangingSelectedBeer}/>
       buttonText = "Add new beer"
     }
     return(
