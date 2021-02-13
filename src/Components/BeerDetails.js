@@ -5,6 +5,13 @@ import * as $ from 'jquery';
 function BeerDetails(props){
   const { beer } = props;
 
+  function stockMessage(num){
+    if(num > 0 && num < 10){
+      return <h3>Only {num} left</h3>
+    } else if (num < 1){
+      return <h3>Out of stock</h3>
+    }
+  }
   function checkquanity (num) {
     if(num > 0 && num < 124){
       return(
@@ -25,6 +32,7 @@ function BeerDetails(props){
       );
     }
   }
+  const messages = stockMessage(beer.quantity);
   const stockElements = checkquanity(beer.quantity);
   return(
     <React.Fragment>
@@ -32,7 +40,7 @@ function BeerDetails(props){
         <h3>{beer.name}</h3>
         <h4>${beer.price} Per Pint</h4>
         <h4>{beer.ABV}%</h4>
-        <h4>{beer.quantity}</h4>
+        {messages}
         {stockElements}
         <button onClick={props.onClickingEdit}>Edit this Beer</button>
         <button onClick ={() => props.onClickingDelete(beer.id)}>Delete this beer</button>
