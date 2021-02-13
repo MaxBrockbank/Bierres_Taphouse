@@ -10,22 +10,28 @@ Bierre's Taphouse is a React application where a user manages inventory for the 
 
 
 ## Required Technologies
-*
+* Modern Web Browser
+* Text Editor
+* NodeJS / NPM
 
 ## Set-up Instructions
-1. 
+1. Click on the green `Code` button and copy the URL that shows up.
+2. Open up your computer's terminal and navigate to the desktop directory `cd Desktop` or any other directory you'd like the project to live in. 
+3. Open this project in your text editor.
+4. In the terminal navigate to the project's root directory and install node_modules with the command `npm i`.
+5. Finally to build and start the development server and view the project run the command `npm start`.
 
 ## Technologies Used
-* 
+* JavaScript
+* jQuery
+* React / JSX
+* React-Bootstrap
+* CSS
+## Component Diagram
+<img src="./READMEAssets/taphouse_diagram.jpg" alt="Taphouse component diagram">
 
 ## Known Bugs
 
-## Specs
-<details>
-<summary> Checkout Specs</summary>
-| Test  | Input | Output  |
-| :---: | :---: |  :---:  |
-</details>
 ## Legal
 * Copyright © 2020 Max Brockbank
 * This software is licensed under the MIT license
