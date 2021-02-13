@@ -121,7 +121,7 @@ class Control extends React.Component{
     return(
       <React.Fragment>
         {currentComponent}
-        <button onClick={this.handleClick} className="btn btn-dark returnBut">{buttonText}</button>
+        <button onClick={this.handleClick} className="btn btn-info returnBut">{buttonText}</button>
       </React.Fragment>
     );
   }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Beer(props){
   return(
     <React.Fragment>
-      <div onClick={() => props.whenBeerClicked(props.id)}>
+      <div onClick={() => props.whenBeerClicked(props.id)} className="beerCard">
         <h3>{props.name}</h3>
         <h4>${props.price} Per Pint</h4>
       </div>

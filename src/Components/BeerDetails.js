@@ -43,14 +43,27 @@ function BeerDetails(props){
   return(
     <React.Fragment>
         <div className="detailsComp">
-          <h3>{beer.brand}</h3>
-          <h3>{beer.name}</h3>
-          <h4>${beer.price} Per Pint</h4>
-          <h4>{beer.ABV}%</h4>
-          {messages}
+          <Row>
+            <Col>Brand</Col>
+            <Col>Name:</Col>
+          </Row>
+          <Row>
+            <Col><h3>{beer.brand}</h3></Col>
+            <Col><h3>{beer.name}</h3></Col>
+          </Row>
+          <Row>
+            <Col>Price:</Col>
+            <Col>ABV:</Col>
+          </Row>
+          <Row>
+            <Col><h4>${beer.price} Per Pint</h4></Col>
+            <Col><h4>{beer.ABV}%</h4></Col>
+          </Row>
+          <i className="redText">{messages}</i>
+          <br/>
           {stockElements}
-          <button onClick={props.onClickingEdit} className="btn btn-dark editBut">Edit this Beer</button>
-          <button onClick ={() => props.onClickingDelete(beer.id)} className="btn btn-dark editBut">Delete this beer</button>
+          <button onClick={props.onClickingEdit} className="btn btn-warning editBut">Edit this Beer</button>
+          <button onClick ={() => props.onClickingDelete(beer.id)} className="btn btn-danger editBut">Delete this beer</button>
         </div>
     </React.Fragment>
   );

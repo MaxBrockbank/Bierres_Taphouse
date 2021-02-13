@@ -29,12 +29,8 @@
 }
 
 .formMatt, .detailsComp{
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: 40%;
-  margin: 20px 0;
-  transform: translate(-50%, -50%);
+  width: 47%;
+  margin: 0 auto;
 }
 
 .detailsComp button{
@@ -47,7 +43,7 @@
   display: block;
   margin: 10px 0 5px 0;
   width: 100%;
-  padding: 5px 0;
+  padding: 6px 10px;
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -67,10 +63,30 @@
 }
 
 .returnBut{
-  width: 100%;
+  margin:50px auto;
+  display: block;
+  width: 47%;
 }
 
+.headerCenter{
+  text-align: center;
+  margin-bottom: 50px;
+}
 
+.pageAdjust{
+  margin-top: 20px;
+}
+
+.beerCard{
+  border-radius: 5px;
+  padding: 15px;
+  background-color:#e6e9ed;
+  text-align: center;
+}
+
+.redText{
+  color:red;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

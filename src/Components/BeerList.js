@@ -34,7 +34,7 @@ function BeerList(props){
                   whenBeerClicked = {props.onBeerSelection}
                   name={beer.name} 
                   brand={beer.brand} 
-                  price={parseInt(beer.price)} 
+                  price={parseFloat(beer.price)} 
                   ABV={parseInt(beer.ABV)} 
                   quantity={parseInt(beer.quantity)} 
                   id={beer.id} 

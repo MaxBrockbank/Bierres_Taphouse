@@ -3,7 +3,7 @@ import './../App.css';
 
 function Header(){
   return(
-    <h1>Welcome to Bierre's Taphouse!</h1>
+    <h1 className="headerCenter">Welcome to Bierre's Taphouse!</h1>
   );
 }
 

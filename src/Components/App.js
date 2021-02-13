@@ -8,8 +8,10 @@ function App() {
   return (
     <React.Fragment>
       <Container>
-        <Header />
-        <Control />
+        <div className="pageAdjust">
+          <Header />
+          <Control />
+        </div>
       </Container>
     </React.Fragment>
   );
