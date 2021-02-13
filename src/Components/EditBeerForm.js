@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import './../App.css';
 function EditBeerForm(props){
   const { beer } = props;
   function handleEditBeerFormSubmission(event){
@@ -9,13 +9,13 @@ function EditBeerForm(props){
   }
   return(
     <React.Fragment>
-      <form onSubmit={handleEditBeerFormSubmission}>
+      <form onSubmit={handleEditBeerFormSubmission} className="formMatt">
         <input type='text' name='name' placeholder='Beer Name' defaultValue={beer.name}/>
         <input type='text' name='brand' placeholder='Beer Brand'defaultValue={beer.brand}/>
         <input type='number' name='price' placeholder='Price Per Pint'defaultValue={beer.price}/>
         <input type='number' name='ABV' placeholder='ABV %'defaultValue={beer.ABV}/>
         <input type='number' name='quantity' placeholder='Pints In Stock'defaultValue={beer.quantity}/>
-        <button type='submit'>Edit this beer</button>
+        <button type='submit' className="btn btn-dark">Edit this beer</button>
       </form>
     </React.Fragment>
   )

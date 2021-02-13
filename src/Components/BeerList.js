@@ -2,6 +2,7 @@ import React from 'react';
 import Beer from './Beer';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
+import './../App.css';
 
 function BeerList(props){
 

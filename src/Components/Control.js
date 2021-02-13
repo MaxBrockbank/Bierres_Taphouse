@@ -3,13 +3,21 @@ import BeerDetails from './BeerDetails';
 import BeerList from './BeerList';
 import NewBeerForm from './NewBeerForm';
 import EditBeerForm from './EditBeerForm';
-
+import './../App.css';
 class Control extends React.Component{
   constructor(props){
     super(props);
     this.state={
       formVisible: false,
-      masterBeerList:[],
+      masterBeerList:[
+        {
+          name: "Czech Pilsner",
+          brand: "Buoy",
+          price: 4.99,
+          ABV: 6.2,
+          quantity: 9
+        }
+      ],
       selectedBeer:null,
       editing: false
     }
@@ -113,7 +121,7 @@ class Control extends React.Component{
     return(
       <React.Fragment>
         {currentComponent}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button onClick={this.handleClick} className="btn btn-dark returnBut">{buttonText}</button>
       </React.Fragment>
     );
   }
