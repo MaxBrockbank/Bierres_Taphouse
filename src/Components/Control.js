@@ -4,6 +4,8 @@ import BeerList from './BeerList';
 import NewBeerForm from './NewBeerForm';
 import EditBeerForm from './EditBeerForm';
 import './../App.css';
+import { v4 } from 'uuid'
+
 class Control extends React.Component{
   constructor(props){
     super(props);
@@ -15,7 +17,40 @@ class Control extends React.Component{
           brand: "Buoy",
           price: 4.99,
           ABV: 6.2,
-          quantity: 9
+          quantity: 9,
+          id: v4()
+        },
+        {
+          name: "Hazy Lil' Thing ",
+          brand: "Sierra Nevada",
+          price: 5.99,
+          ABV: 5.1,
+          quantity: 20,
+          id: v4()
+        },
+        {
+          name: "Hefeweizen",
+          brand: "Widmer Brothers",
+          price: 6.99,
+          ABV: 6.0,
+          quantity: 3,
+          id: v4()
+        },
+        {
+          name: "Corona",
+          brand: "Cervecería Modelo",
+          price: 4.99,
+          ABV: 4.6,
+          quantity: 8,
+          id: v4()
+        },
+        {
+          name: "Classic Beer",
+          brand: "Good Beer Co.",
+          price: 10.99,
+          ABV: 8.2,
+          quantity: 124,
+          id: v4()
         }
       ],
       selectedBeer:null,

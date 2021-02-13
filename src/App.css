@@ -87,6 +87,11 @@
 .redText{
   color:red;
 }
+
+.items_row{
+  margin: 30px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
