@@ -28,7 +28,7 @@ Bierre's Taphouse is a React application where a user manages inventory for the 
 * React-Bootstrap
 * CSS
 ## Component Diagram
-<img src="./READMEAssets/taphouse_diagram.jpg" alt="Taphouse component diagram">
+<img src="READMEAssets/componentDiagram.jpg" alt="Taphouse component diagram">
 
 ## Known Bugs
 

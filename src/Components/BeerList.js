@@ -3,6 +3,7 @@ import Beer from './Beer';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
 import './../App.css';
+import { v4 } from 'uuid';
 
 function BeerList(props){
 
@@ -29,7 +30,7 @@ function BeerList(props){
           <Row className="items_row" key={row} xl={4} lg={4} md={4} sm={2} xs={2}>
             {rows[row].map(beer => {
               return(
-                <Col>
+                <Col key={v4()}>
                   <Beer 
                   whenBeerClicked = {props.onBeerSelection}
                   name={beer.name} 

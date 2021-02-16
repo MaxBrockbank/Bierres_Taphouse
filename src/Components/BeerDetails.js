@@ -70,6 +70,9 @@ function BeerDetails(props){
 }
 
 BeerDetails.propTypes = {
-
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func,
+  onRestocking: PropTypes.func,
+  onBuying: PropTypes.func
 }
 export default BeerDetails;
